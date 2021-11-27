@@ -37,13 +37,13 @@ Partial Class Form1
         Me.lbl_dwnloaded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbl_dwnloaded.Location = New System.Drawing.Point(12, 9)
         Me.lbl_dwnloaded.Name = "lbl_dwnloaded"
-        Me.lbl_dwnloaded.Size = New System.Drawing.Size(729, 115)
+        Me.lbl_dwnloaded.Size = New System.Drawing.Size(600, 100)
         Me.lbl_dwnloaded.TabIndex = 0
-        Me.lbl_dwnloaded.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lbl_dwnloaded.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 277)
+        Me.Button1.Location = New System.Drawing.Point(13, 221)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 23)
         Me.Button1.TabIndex = 1
@@ -108,7 +108,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(757, 354)
+        Me.ClientSize = New System.Drawing.Size(635, 270)
         Me.Controls.Add(Me.lbl_gust)
         Me.Controls.Add(Me.lbl_deg)
         Me.Controls.Add(Me.lbl_speed)
