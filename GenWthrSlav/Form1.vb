@@ -86,9 +86,10 @@ Public Class Form1
         Else
             lbl_gust.Text = "Gust: " & jsonObject.SelectToken("current.wind_gust").ToString
         End If
-        'lbl_gust.Text = "Gust: " & jsonObject.SelectToken("current.wind_gust").ToString
-        'MsgBox("Temp: " & jsonObject.SelectToken("current.temp").ToString)
-
+        lbl_press.Text = "Pressure: " & jsonObject.SelectToken("current.pressure").ToString ' Pressure in HGA
+        Dim InchPress As Double
+        InchPress = jsonObject.SelectToken("current.pressure")
+        lbl_presinch.Text = (FormatNumber((InchPress / 33.863), 2)).ToString ' Pressure in Inches displayed with only 2 digits after the decimal
     End Sub
 
     ' Wind direction conversion function returns string with wind direction in it

@@ -30,6 +30,8 @@ Partial Class Form1
         Me.lbl_speed = New System.Windows.Forms.Label()
         Me.lbl_deg = New System.Windows.Forms.Label()
         Me.lbl_gust = New System.Windows.Forms.Label()
+        Me.lbl_press = New System.Windows.Forms.Label()
+        Me.lbl_presinch = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_dwnloaded
@@ -43,7 +45,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 265)
+        Me.Button1.Location = New System.Drawing.Point(12, 244)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 23)
         Me.Button1.TabIndex = 1
@@ -104,11 +106,31 @@ Partial Class Form1
         Me.lbl_gust.TabIndex = 8
         Me.lbl_gust.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'lbl_press
+        '
+        Me.lbl_press.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lbl_press.Location = New System.Drawing.Point(13, 193)
+        Me.lbl_press.Name = "lbl_press"
+        Me.lbl_press.Size = New System.Drawing.Size(93, 35)
+        Me.lbl_press.TabIndex = 9
+        Me.lbl_press.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbl_presinch
+        '
+        Me.lbl_presinch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lbl_presinch.Location = New System.Drawing.Point(112, 193)
+        Me.lbl_presinch.Name = "lbl_presinch"
+        Me.lbl_presinch.Size = New System.Drawing.Size(93, 35)
+        Me.lbl_presinch.TabIndex = 10
+        Me.lbl_presinch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(635, 314)
+        Me.ClientSize = New System.Drawing.Size(635, 291)
+        Me.Controls.Add(Me.lbl_presinch)
+        Me.Controls.Add(Me.lbl_press)
         Me.Controls.Add(Me.lbl_gust)
         Me.Controls.Add(Me.lbl_deg)
         Me.Controls.Add(Me.lbl_speed)
@@ -131,4 +153,6 @@ Partial Class Form1
     Friend WithEvents lbl_speed As Label
     Friend WithEvents lbl_deg As Label
     Friend WithEvents lbl_gust As Label
+    Friend WithEvents lbl_press As Label
+    Friend WithEvents lbl_presinch As Label
 End Class
