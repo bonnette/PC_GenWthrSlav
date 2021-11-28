@@ -1,6 +1,8 @@
 # PC_GenWthrSlav
 PC Version of a weather client
 <br>
+![Client Photo](https://github.com/bonnette/PC_GenWthrSlav/blob/master/GenWthrSlav.png)
+<br>
 This Project is a variation of my FSgenweather project. The FS in "FSgenslave" stands for Full Screen. The "gen" in the name stands for "general" in that instead of 
 grabbing data from a "SwitchDoc" weather station at the house. The weather data is derived from an api provided by openweathermap.com as well as Newtonsoft.Json.Linq to extract 
 json data from the website.
