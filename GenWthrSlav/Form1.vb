@@ -17,10 +17,18 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' Clear the JSON text field and then prepare SCP to copy data.
+        ' Clear the JSON text field and all other labels then prepare SCP to copy data.
         lbl_dwnloaded.Text = ""
+        'lbl_deg.Text = ""
+        'lbl_feels.Text = ""
+        'lbl_gust.Text = ""
+        'lbl_humid.Text = ""
+        'lbl_presinch.Text = ""
+        'lbl_press.Text = ""
+        'lbl_speed.Text = ""
+        'lbl_temp.Text = ""
         Try
-            ' Setup session options
+
             ' Set up session options
             Dim sessionOptions As New SessionOptions
             With sessionOptions
@@ -74,22 +82,26 @@ Public Class Form1
         lbl_temp.Text = "Temp: " & jsonObject.SelectToken("current.temp").ToString
         lbl_humid.Text = "Humidity: " & jsonObject.SelectToken("current.humidity").ToString
         lbl_feels.Text = "Feels Like: " & jsonObject.SelectToken("current.feels_like").ToString
-        'lbl_deg.Text = "Dir: " & jsonObject.SelectToken("current.wind_deg").ToString
+
+        ' Convert Wind direction in compass degrees to text (North, South, East Etc.)
         deg = jsonObject.SelectToken("current.wind_deg")
-        ndeg = DirCalc(deg)
+        ndeg = DirCalc(deg) ' Do the conversion and put it in the wind direction label
         lbl_deg.Text = "Dir: " & ndeg
-        lbl_speed.Text = "Speed: " & jsonObject.SelectToken("current.wind_speed").ToString
+
+        lbl_speed.Text = "Speed: " & FormatNumber(jsonObject.SelectToken("current.wind_speed").ToString, 1) ' Display speed with only 1 digit after the decimal 
+
         ' Sometimes the weather service does not send "current.wind_gust" information. So, we must
-        ' test to see if it exsists first then deal with the resuluts.
+        ' test to see if it exsists, then deal with the resuluts.
+
         If jsonObject.SelectToken("current.wind_gust") Is Nothing Then
             lbl_gust.Text = "Gust: 0"
         Else
-            lbl_gust.Text = "Gust: " & jsonObject.SelectToken("current.wind_gust").ToString
+            lbl_gust.Text = "Gust: " & FormatNumber(jsonObject.SelectToken("current.wind_gust").ToString, 1) ' Display gust with only 1 digit after the decimal
         End If
         lbl_press.Text = "Pressure: " & jsonObject.SelectToken("current.pressure").ToString ' Pressure in HGA
         Dim InchPress As Double
         InchPress = jsonObject.SelectToken("current.pressure")
-        lbl_presinch.Text = (FormatNumber((InchPress / 33.863), 2)).ToString ' Pressure in Inches displayed with only 2 digits after the decimal
+        lbl_presinch.Text = (FormatNumber((InchPress / 33.863), 2)).ToString & " Inches" ' Pressure in Inches displayed with only 2 digits after the decimal
     End Sub
 
     ' Wind direction conversion function returns string with wind direction in it
