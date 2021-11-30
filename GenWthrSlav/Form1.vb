@@ -98,10 +98,11 @@ Public Class Form1
         Else
             lbl_gust.Text = "Gust: " & FormatNumber(jsonObject.SelectToken("current.wind_gust").ToString, 1) ' Display gust with only 1 digit after the decimal
         End If
-        lbl_press.Text = "Pressure: " & jsonObject.SelectToken("current.pressure").ToString ' Pressure in HGA
+        lbl_press.Text = jsonObject.SelectToken("current.pressure").ToString & " Millibars" ' Pressure in HGA
         Dim InchPress As Double
         InchPress = jsonObject.SelectToken("current.pressure")
-        lbl_presinch.Text = (FormatNumber((InchPress / 33.863), 2)).ToString & " Inches" ' Pressure in Inches displayed with only 2 digits after the decimal
+        'lbl_presinch.Text = (FormatNumber((InchPress / 33.863), 2)).ToString & " Inches" ' Pressure in Inches displayed with only 2 digits after the decimal
+        lbl_presinch.Text = (FormatNumber(((InchPress * 0.295301) / 10), 2)).ToString & " Inches" ' Pressure in Inches displayed with only 2 digits after the decimal
     End Sub
 
     ' Wind direction conversion function returns string with wind direction in it

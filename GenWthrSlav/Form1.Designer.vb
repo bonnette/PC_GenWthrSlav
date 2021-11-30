@@ -32,6 +32,8 @@ Partial Class Form1
         Me.lbl_gust = New System.Windows.Forms.Label()
         Me.lbl_press = New System.Windows.Forms.Label()
         Me.lbl_presinch = New System.Windows.Forms.Label()
+        Me.gb_pressure = New System.Windows.Forms.GroupBox()
+        Me.gb_pressure.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_dwnloaded
@@ -39,13 +41,13 @@ Partial Class Form1
         Me.lbl_dwnloaded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbl_dwnloaded.Location = New System.Drawing.Point(12, 9)
         Me.lbl_dwnloaded.Name = "lbl_dwnloaded"
-        Me.lbl_dwnloaded.Size = New System.Drawing.Size(589, 100)
+        Me.lbl_dwnloaded.Size = New System.Drawing.Size(590, 80)
         Me.lbl_dwnloaded.TabIndex = 0
         Me.lbl_dwnloaded.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 226)
+        Me.Button1.Location = New System.Drawing.Point(12, 232)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 23)
         Me.Button1.TabIndex = 1
@@ -55,7 +57,7 @@ Partial Class Form1
         'lbl_temp
         '
         Me.lbl_temp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_temp.Location = New System.Drawing.Point(13, 126)
+        Me.lbl_temp.Location = New System.Drawing.Point(13, 105)
         Me.lbl_temp.Name = "lbl_temp"
         Me.lbl_temp.Size = New System.Drawing.Size(93, 35)
         Me.lbl_temp.TabIndex = 2
@@ -64,7 +66,7 @@ Partial Class Form1
         'lbl_humid
         '
         Me.lbl_humid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_humid.Location = New System.Drawing.Point(211, 126)
+        Me.lbl_humid.Location = New System.Drawing.Point(211, 105)
         Me.lbl_humid.Name = "lbl_humid"
         Me.lbl_humid.Size = New System.Drawing.Size(93, 35)
         Me.lbl_humid.TabIndex = 4
@@ -73,7 +75,7 @@ Partial Class Form1
         'lbl_feels
         '
         Me.lbl_feels.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_feels.Location = New System.Drawing.Point(112, 126)
+        Me.lbl_feels.Location = New System.Drawing.Point(112, 105)
         Me.lbl_feels.Name = "lbl_feels"
         Me.lbl_feels.Size = New System.Drawing.Size(93, 35)
         Me.lbl_feels.TabIndex = 5
@@ -82,7 +84,7 @@ Partial Class Form1
         'lbl_speed
         '
         Me.lbl_speed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_speed.Location = New System.Drawing.Point(409, 126)
+        Me.lbl_speed.Location = New System.Drawing.Point(409, 105)
         Me.lbl_speed.Name = "lbl_speed"
         Me.lbl_speed.Size = New System.Drawing.Size(93, 35)
         Me.lbl_speed.TabIndex = 6
@@ -91,7 +93,7 @@ Partial Class Form1
         'lbl_deg
         '
         Me.lbl_deg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_deg.Location = New System.Drawing.Point(310, 126)
+        Me.lbl_deg.Location = New System.Drawing.Point(310, 105)
         Me.lbl_deg.Name = "lbl_deg"
         Me.lbl_deg.Size = New System.Drawing.Size(93, 35)
         Me.lbl_deg.TabIndex = 7
@@ -100,7 +102,7 @@ Partial Class Form1
         'lbl_gust
         '
         Me.lbl_gust.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_gust.Location = New System.Drawing.Point(508, 126)
+        Me.lbl_gust.Location = New System.Drawing.Point(508, 105)
         Me.lbl_gust.Name = "lbl_gust"
         Me.lbl_gust.Size = New System.Drawing.Size(93, 35)
         Me.lbl_gust.TabIndex = 8
@@ -109,7 +111,7 @@ Partial Class Form1
         'lbl_press
         '
         Me.lbl_press.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_press.Location = New System.Drawing.Point(13, 175)
+        Me.lbl_press.Location = New System.Drawing.Point(6, 19)
         Me.lbl_press.Name = "lbl_press"
         Me.lbl_press.Size = New System.Drawing.Size(93, 35)
         Me.lbl_press.TabIndex = 9
@@ -118,19 +120,29 @@ Partial Class Form1
         'lbl_presinch
         '
         Me.lbl_presinch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbl_presinch.Location = New System.Drawing.Point(112, 175)
+        Me.lbl_presinch.Location = New System.Drawing.Point(105, 19)
         Me.lbl_presinch.Name = "lbl_presinch"
         Me.lbl_presinch.Size = New System.Drawing.Size(93, 35)
         Me.lbl_presinch.TabIndex = 10
         Me.lbl_presinch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'gb_pressure
+        '
+        Me.gb_pressure.Controls.Add(Me.lbl_press)
+        Me.gb_pressure.Controls.Add(Me.lbl_presinch)
+        Me.gb_pressure.Location = New System.Drawing.Point(8, 151)
+        Me.gb_pressure.Name = "gb_pressure"
+        Me.gb_pressure.Size = New System.Drawing.Size(210, 66)
+        Me.gb_pressure.TabIndex = 11
+        Me.gb_pressure.TabStop = False
+        Me.gb_pressure.Text = "Air Pressure"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(617, 260)
-        Me.Controls.Add(Me.lbl_presinch)
-        Me.Controls.Add(Me.lbl_press)
+        Me.ClientSize = New System.Drawing.Size(617, 271)
+        Me.Controls.Add(Me.gb_pressure)
         Me.Controls.Add(Me.lbl_gust)
         Me.Controls.Add(Me.lbl_deg)
         Me.Controls.Add(Me.lbl_speed)
@@ -141,6 +153,7 @@ Partial Class Form1
         Me.Controls.Add(Me.lbl_dwnloaded)
         Me.Name = "Form1"
         Me.Text = "Weather "
+        Me.gb_pressure.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -155,4 +168,5 @@ Partial Class Form1
     Friend WithEvents lbl_gust As Label
     Friend WithEvents lbl_press As Label
     Friend WithEvents lbl_presinch As Label
+    Friend WithEvents gb_pressure As GroupBox
 End Class
