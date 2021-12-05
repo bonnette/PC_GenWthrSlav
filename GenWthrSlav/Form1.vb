@@ -80,7 +80,7 @@ Public Class Form1
         Dim jsonObject As JObject = JObject.Parse(fileReader)
         ' Display the temperature, humidity, Wind speed and direction ETC.
         lbl_temp.Text = "Temp: " & jsonObject.SelectToken("current.temp").ToString
-        lbl_humid.Text = "Humidity: " & jsonObject.SelectToken("current.humidity").ToString
+        lbl_humid.Text = "Humidity: " & jsonObject.SelectToken("current.humidity").ToString & "%"
         lbl_feels.Text = "Feels Like: " & jsonObject.SelectToken("current.feels_like").ToString
 
         ' Convert Wind direction in compass degrees to text (North, South, East Etc.)

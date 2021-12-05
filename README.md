@@ -1,5 +1,5 @@
 # PC_GenWthrSlav
-PC Version of a weather client
+PC Version of a weather slave
 <br>
 ![Client Photo](https://github.com/bonnette/PC_GenWthrSlav/blob/master/GenWthrSlav.png)
 <br>
